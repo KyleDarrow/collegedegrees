@@ -1,0 +1,8 @@
+.degreeButton {
+    justify-content: center;
+    display: flex;
+}
+
+.degreeButton button {
+    cursor: pointer;
+}

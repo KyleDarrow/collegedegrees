@@ -1,0 +1,20 @@
+{
+    "collegeDegrees": [
+        {
+            "degree": {
+                "school": "Northeastern University",
+                "program/major": "Biology",
+                "type": "BS",
+                "year conferred": 2019 
+            }
+        },
+        {
+            "degree": {
+                "school": "Boston University",
+                "program/major": "Computer Information Systems",
+                "type": "MS",
+                "year conferred": 2024 
+            }
+        }
+    ]
+}
