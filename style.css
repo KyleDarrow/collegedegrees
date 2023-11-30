@@ -1,3 +1,4 @@
+/* Button */
 .degreeButton {
     justify-content: center;
     display: flex;
@@ -5,4 +6,17 @@
 
 .degreeButton button {
     cursor: pointer;
+}
+
+/* List of degrees */
+.degreeInfo {
+    background-color: aliceblue;
+    justify-content: center;
+    border: 5px solid black;
+    border-radius: 15px;
+    flex-direction: column;
+    padding: 20px;
+    display: none;
+    margin: 10px auto;
+    width: 350px;
 }
