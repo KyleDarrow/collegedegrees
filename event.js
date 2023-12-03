@@ -1,5 +1,3 @@
-
-
 function fetchData() {
     // Reference: https://stackoverflow.com/questions/61456020/best-way-to-check-status-code-of-http-response
     //create a fetch request to return promise
@@ -19,20 +17,30 @@ function fetchData() {
             const degrees = data.collegeDegrees;
             const degreeList = document.getElementById("degreeList");
             degreeList.innerHTML = "";
-            const degreeInfo = document.getElementById("degreeList");
+            const table = document.createElement("table");
+
+            //add table headers
+            const headerRow = table.insertRow();
+            const headers = ["School", "Program", "Type", "Year"];
+            for (const header of headers) {
+                const th = document.createElement("th");
+                th.textContent = header;
+                headerRow.appendChild(th);
+            }
+
+            //add table content
             for (let i = 0; i < degrees.length; i++) {
                 const elements = degrees[i];
                 const degree = elements.degree;
-                const degreeInformation = document.createElement("div");
-                degreeInformation.innerHTML = `
-                <p><strong>School:</strong> ${degree.school}</p>
-                <p><strong>Program:</strong> ${degree["program/major"]}</p>
-                <p><strong>Type:</strong> ${degree.type}</p>
-                <p><strong>Year Conferred:</strong> ${degree["year conferred"]}</p>
-                <br>`;
-                degreeList.appendChild(degreeInformation);
+                const row = table.insertRow();
+                const cells = ["school", "program/major", "type", "year conferred"];
+                for (const cell of cells) {
+                    const td = row.insertCell();
+                    td.textContent = degree[cell];
+                }
             }
-            degreeInfo.style.display = "flex";
+            degreeList.appendChild(table);
+            degreeList.style.display = "flex";
         })
         .catch(error => {
             console.error("Error:", error.message);
